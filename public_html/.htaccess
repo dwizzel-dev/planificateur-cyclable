@@ -1,0 +1,47 @@
+##################################################
+
+#ErrorDocument 404 /index.php?&path=404
+DirectoryIndex index.php
+
+##################################################
+
+Options +FollowSymlinks
+RewriteEngine On
+
+##################################################
+
+# URL REWRITING LANGUAGES
+RewriteRule ^fr/(.*)$ $1?lang=fr_CA [QSA,L]
+RewriteRule ^en/(.*)$ $1?lang=en_US [QSA,L]
+
+##################################################
+
+# URL SITE ADMIN
+RewriteRule ^admin/(.*)/$ admin/index.php?&path=$1&%{QUERY_STRING} [NC,L]
+RewriteRule ^admin/$ admin/index.php?&%{QUERY_STRING} [NC,L]
+
+##################################################
+
+# URL SITE OFFLINE
+RewriteRule ^offline/$ offline.php [NC,L]
+
+# URL SITE PROCESS-FORM
+RewriteRule ^process/$ process-form.php?&%{QUERY_STRING} [NC,L]
+
+# URL SITE 404
+RewriteRule ^404/$ index.php?&path=404/&%{QUERY_STRING} [NC,L]
+
+
+##################################################
+
+# URL REWRITING QUERY STRING AND PATH FOR STANDARD PAGES
+RewriteRule ^(.*)/$ index.php?&path=$1&%{QUERY_STRING} [NC,L]
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>

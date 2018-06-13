@@ -1,0 +1,195 @@
+﻿
+.jFormer .jFormComponentCreditCard .expirationDateDiv{
+	overflow:hidden;
+	}
+
+.jFormer .jFormComponent select {
+	border-radius: 0px !important;
+	background:#fff  !important;
+	}
+	
+	
+
+.jFormer .jFormComponentMultipleChoice .choiceLabel{
+	font-size:100% !important;
+	}
+
+/*	
+.jFormer .jFormerControl li button {	
+	font-size:100%;
+	color:#FED1A7;
+	text-transform:uppercase;
+	padding:10px;
+	background-color:#967E66;
+	display:block;
+	float:left;
+	font-weight:bold;
+	margin-top:3px;	
+	border:0;
+	-webkit-border-radius: 5px;
+	border-radius:0;
+	}
+	
+	
+.jFormer .jFormerControl li button:hover {
+	color:#fff;
+	text-decoration:underline;
+	}	
+*/
+.jFormer .jFormComponent { 
+	margin-bottom: 3px; 
+	padding: .5em .8em .5em .5em;
+	}
+
+.jFormer .jFormComponent input {
+	border-radius: 0px;
+	background: #fff;
+	font-size:90% !important;
+	}
+	
+.jFormer .jFormComponent textarea {	
+	border-radius: 0px;
+	background: #fff;
+	font-size:100%;
+	}
+	
+.jFormer .jFormComponent select {	
+	border-radius: 4px;
+	padding: 3px;
+	font-size:100%;
+	}
+	
+.jFormer .jFormComponentAddInstanceButton {	
+	border-radius: 0;
+	border:0;
+	font-size:80%;
+	color:#FED1A7;
+	text-transform:uppercase;
+	padding:4px 8px;
+	display:block;
+	position:relative;
+	font-weight:bold;
+	cursor:pointer;
+	margin-left:10px;
+	background:#967e66;
+	border-radius:0;
+	}
+	
+.jFormComponentAddInstanceButton:hover {
+	color:#fff;
+	text-decoration:underline;
+	}	
+		
+.jFormer .jFormSectionAddInstanceButton {	
+	border-radius: 4px;
+	padding: 5px 10px 5px 25px;
+	width: 200px;
+	text-align: left;
+	}
+	
+.jFormer .jFormComponentRemoveInstanceButton{	
+	border-radius: 0;
+	border:0;
+	font-size:80%;
+	color:#FED1A7;
+	text-transform:uppercase;
+	padding:4px 8px;
+	display:block;
+	position:relative;
+	font-weight:bold;
+	cursor:pointer;
+	margin-left:10px;
+	background:#967e66;
+	border-radius:0;
+	margin-left: 0;
+	}
+	
+.jFormer .jFormComponentRemoveInstanceButton:hover{
+	color:#fff;
+	text-decoration:underline;
+	}
+
+.jFormer .jFormSectionRemoveInstanceButton {	
+	border-radius: 4px;
+	padding: 5px 10px 5px 25px;
+	}
+	
+
+	
+.jFormer .jFormComponentDateSelector {
+	box-shadow: #777 4px 4px 4px;
+	}
+	
+	
+.jFormer .jFormerTip .tipContent { 
+	box-shadow: #000 4px 4px 4px;
+	border-radius: 3px !important;
+	box-shadow: 2px 2px 5px #000 !important;
+	}	
+.jFormer .jFormSection .jFormSectionTitle { 
+	font-size:130%;
+	font-weight:normal;
+	padding:0px 0px 10px 0px;
+	}
+	
+.jFormer .jFormComponentHighlight { 
+	background-color: #eee; 
+	border: 1px solid #fff; 
+	}
+	
+.jFormer .jFormComponent .jFormComponentLabel {
+	display: block;
+	font-size: 100%;
+	font-weight: normal;
+	margin-bottom: 5px;
+	text-transform:uppercase;	
+	}	
+	
+.jFormer .jFormerTip .tipContent .tipErrorUl {
+	color:#FED1A7;
+	}	
+	
+.jFormer .jFormerTip .tipContent ul {
+	padding-left: 40px;
+	}	
+	
+.jFormer .jFormComponentValidationFailed {
+	background-color: #eee;
+	border: 1px solid #ff0000;
+	}	
+	
+.jFormer .jFormComponentAddress .stateDiv {
+	clear:both;
+	}
+	
+.jFormer .jFormComponentAddress .addressLine1 {
+	width: 18em;
+	}	
+.jFormer .jFormComponentAddress .addressLine2 {
+	width: 18em;
+	}	
+	
+.jFormer .jFormComponentName .lastName {
+	/*width: 8em;*/
+	}
+
+.jFormer .jFormComponent .jFormComponentSublabel p {
+	margin-top:-10px;
+	margin-bottom: 10px;
+	}	
+	
+.jFormer .jFormComponentCreditCard .expirationMonth {
+	margin-bottom: 10px;
+	}	
+
+@media screen and (max-width: 480px) { /*  cell en hauteur*/	
+	
+	.jFormer .jFormerControl li{
+		float:none !important;
+		display:inline;
+		}
+	.jFormer .jFormerControl li button{
+		width:100%;
+		}
+	}	
+	
