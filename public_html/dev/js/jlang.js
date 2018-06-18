@@ -19,6 +19,11 @@ function JLang(){
 		with(this){
 			tx['bienvenue'] = 'Bienvenue!';
 			//
+			tx['_conn_mode'] = 'mode non connecté';
+			tx['on_conn_mode'] = 'sauvegarde en cours!';
+			tx['saved_conn_mode'] = 'sauvegarde effectuée!';
+			tx['notsaved_conn_mode'] = 'erreur de sauvegarde! problême de connection internet';
+			//
 			tx['fermer'] = 'fermer';
 			tx['sauvegarder'] = 'sauvegarder';
 			tx['aide'] = 'aide';
@@ -43,7 +48,7 @@ function JLang(){
 			tx['nom du nouveau parcours:'] = 'nom du nouveau parcours:';
 			tx['creer le parcours'] = 'creer le parcours';
 			tx['vos grilles sauvegardees'] = 'vos grilles sauvegardees';
-			tx['cliquer sur une grille pour l\'ouvrir.'] = '<div class="row-fluid"><div class="span12"><p>Les points situés à la droite du nom des grilles vous indiquent l\'état de celle-ci:</p><ul><li><span class="red left">&#x26AB;</span> : <i>Aucune question n\'a été répondu</i></li><li><span class="yellow left">&#x26AB;</span> : <i>Il reste des questions sans réponse</i></li><li><span class="green left">&#x26AB;</span> : <i>toutes les questions sont complétées</i></li></ul><p>Lorsque vous aurez fait vos choix, le point se changera en vert et vous aurez accès aux recommandations.</p><p><b>Vous pouvez cliquer sur une grille pour l\'ouvrir.</b></p></div></div>';
+			tx['cliquer sur une grille pour l\'ouvrir.'] = '<div class="row-fluid"><div class="span12"><p>Les points situés à la droite du nom des grilles vous indiquent l\'état de celle-ci:</p><ul><li><span class="recom-dot red left"></span> : <i>Aucune question n\'a été répondu</i></li><li><span class="recom-dot yellow left"></span> : <i>Il reste des questions sans réponse</i></li><li><span class="recom-dot green left"></span> : <i>toutes les questions sont complétées</i></li></ul><p>Lorsque vous aurez fait vos choix, le point se changera en vert et vous aurez accès aux recommandations.</p><p><b>Vous pouvez cliquer sur une grille pour l\'ouvrir.</b></p></div></div>';
 			tx['aucune grille sauvegardee'] = 'aucune grille sauvegardee';
 			tx['nouvelle grille'] = 'nouvelle grille';
 			tx['pour creer une nouvelle grille ecrire un nom.'] = 'pour creer une nouvelle grille ecrire un nom.';

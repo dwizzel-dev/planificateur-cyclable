@@ -19,9 +19,6 @@
 		<?php require_once(DIR_VIEWS.'header.php'); ?>
 		<div class="row-fluid margin-t-60 bottom-margin-border">
 			<div class="span12">
-				<div class="span2">
-					<img src="<?php echo PATH_IMAGE; ?>piste_cyclable.gif" class="--img-polaroid" style="width:100%;height:auto;margin-top:15px;">
-				</div>
 				<div class="span10">
 					<div class="row-fluid">
 						<div class="span12" id="row-title">
@@ -30,9 +27,7 @@
 					</div>
 					<!-- text -->		
 					<div class="row-fluid" >
-						<div class="span12" id="row-content">
-							<?php echo $arrOutput['content']['text'] ;?>
-						</div>
+						<?php echo $arrOutput['content']['text'] ;?>
 					</div>
 				</div>
 				<a name="login-form"></a>

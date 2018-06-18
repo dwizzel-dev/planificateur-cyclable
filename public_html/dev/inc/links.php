@@ -9,6 +9,7 @@
 
 $bFileExist = false;
 $linksFile = 'links';
+$cacheBuster = getCacheBuster();
 //cache
 $oCache = $oReg->get('cache');
 $arrTmpLinks = $oCache->cacheRead($linksFile);
@@ -21,12 +22,14 @@ if(is_array($arrTmpLinks)){
 	if(SIMPLIFIED_URL){
 		foreach($oReg->get('site')->getLinks() as $k=>$v){
 			//$arrTmpLinks[$v['id']] = PATH_WEB.$v['prefix'].'/'.$v['path'].'/';	
-			$arrTmpLinks[$v['id']] = $v['prefix'].'/'.$v['path'].'/';	
+			//$arrTmpLinks[$v['id']] = $v['prefix'].'/'.$v['path'].'/';	
+			//add cache buster
+			$arrTmpLinks[$v['id']] = $v['prefix'].'/'.$v['path'].'/'.$cacheBuster.'/';	
 			}
 	}else{
 		foreach($oReg->get('site')->getLinks() as $k=>$v){
 			//$arrTmpLinks[$v['id']] = PATH_WEB.'index.php?&lang='.$v['code'].'&path='.$v['path'].'/';	
-			$arrTmpLinks[$v['id']] = 'index.php?&lang='.$v['code'].'&path='.$v['path'].'/';	
+			$arrTmpLinks[$v['id']] = 'index.php?&lang='.$v['code'].'&path='.$v['path'].'&cb='.$cacheBuster;	
 			}
 		}
 	}
@@ -34,12 +37,12 @@ if(is_array($arrTmpLinks)){
 if(!$bFileExist){
 	$oCache->cacheWrite($linksFile, $arrTmpLinks);
 	}
-		
+
 //set it to global
 $oGlob->set('links', $arrTmpLinks);
 
 //clean
-unset($arrTmpLinks);
+unset($arrTmpLinks, $cacheBuster);
 
 
 //END

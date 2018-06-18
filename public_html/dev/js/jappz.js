@@ -646,13 +646,13 @@ function JAppz(){
 				var iReponse = false;
 				strQuestion += '<li>';
 				if(arrReponse === false){
-					strQuestion += '<span question-id="' + oGrille.questions[o].id + '" class="left red">&#x26AB;</span>';
+					strQuestion += '<span question-id="' + oGrille.questions[o].id + '" class="recom-dot left red"></span>';
 				}else{
 					if(typeof(arrReponse[oGrille.questions[o].id]) != 'undefined'){
 						iReponse = arrReponse[oGrille.questions[o].id];
-						strQuestion += '<span question-id="' + oGrille.questions[o].id + '" class="left green">&#x26AB;</span>';
+						strQuestion += '<span question-id="' + oGrille.questions[o].id + '" class="recom-dot left green"></span>';
 					}else{
-						strQuestion += '<span question-id="' + oGrille.questions[o].id + '" class="left yellow">&#x26AB;</span>';
+						strQuestion += '<span question-id="' + oGrille.questions[o].id + '" class="recom-dot left yellow"></span>';
 						}
 					}
 				strQuestion += '<a style="display:table-cell;" question-id="' + oGrille.questions[o].id + '">' + gData.keyvalue.questions[oGrille.questions[o].id] + '</a>';
@@ -706,7 +706,7 @@ function JAppz(){
 			//action on LI reponse
 			$('.listing-reponses > LI, .listing-reponses > LI > INPUT[type=radio]').unbind();
 			$('.listing-reponses > LI, .listing-reponses > LI > INPUT[type=radio]').click(function(e){
-				e.preventDefault();
+				//e.preventDefault();
 				//get parent class
 				var oTmp = $(document).data('jappzclass');
 				if(typeof(oTmp) == 'object'){
@@ -735,19 +735,24 @@ function JAppz(){
 		
 		//
 		this.saved = bState;
+		var mode = '';
 		
-		$('#connection').removeClass('notsaved saved on');
 		if(this.saved){
 			if(this.connection){
-				$('#connection').addClass('saved');	
+				mode = 'saved';
 				}
 		}else{
 			if(this.connection){
-				$('#connection').addClass('on');	
+				mode = 'on';
 			}else{
-				$('#connection').addClass('notsaved');	
+				mode = 'notsaved';
 				}
 			}
+		//apply	
+		$('#connection').parent().attr('title', jLang.t(mode + '_conn_mode'));	
+		$('#connection').removeClass('notsaved saved on');	
+		$('#connection').addClass(mode);	
+
 		};
 	
 
@@ -1215,11 +1220,11 @@ function JAppz(){
 							strGrille += '<li><span style="float: left;"><input type="checkbox" value="' + arrDisplay[p].id + '" ></span>';
 							//status
 							if(arrDisplay[p].status === 2){
-								strGrille += '<span class="right green">&#x26AB;</span>';
+								strGrille += '<span class="recom-dot right green"></span>';
 							}else if(arrDisplay[p].status === 1){
-								strGrille += '<span class="right yellow">&#x26AB;</span>';	
+								strGrille += '<span class="recom-dot right yellow"></span>';	
 							}else{
-								strGrille += '<span class="right red">&#x26AB;</span>';
+								strGrille += '<span class="recom-dot right red"></span>';
 								}
 							strGrille += '<a style="display:table-cell;" grille-id="' + arrDisplay[p].id + '">' + arrDisplay[p].name + '</a>';
 							strGrille += '</li>';
@@ -1231,11 +1236,11 @@ function JAppz(){
 									strGrille += '<span style="float: left;"><input type="checkbox" value="' + arrKeepIntersection[arrDisplay[p].id][q].id + '" ></span>';
 									//status
 									if(arrKeepIntersection[arrDisplay[p].id][q].status == 2){
-										strGrille += '<span class="right green">&#x26AB;</span>';
+										strGrille += '<span class="recom-dot right green"></span>';
 									}else if(arrKeepIntersection[arrDisplay[p].id][q].status == 1){
-										strGrille += '<span class="right yellow">&#x26AB;</span>';	
+										strGrille += '<span class="recom-dot right yellow"></span>';	
 									}else{
-										strGrille += '<span class="right red">&#x26AB;</span>';
+										strGrille += '<span class="recom-dot right red"></span>';
 										}
 									strGrille += '<a style="display:table-cell;" grille-id="' + arrKeepIntersection[arrDisplay[p].id][q].id + '">' + arrKeepIntersection[arrDisplay[p].id][q].name + '</a>';
 									strGrille += '</li>';
@@ -1931,7 +1936,6 @@ function JAppz(){
 		
 	//-----------------------------------------------------------------------------------------*
 	this.closeAlert = function(){
-		
 		$('#modal-alert').addClass('hide fade');
 		$('#modal-alert #modal-alert-title').html();
 		$('#modal-alert #modal-alert-content').html();

@@ -10,7 +10,7 @@
 <title><?php echo META_TITLE.' | '.ucfirst($arrOutput['meta']['title']);?></title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="robots" content="index, follow, all" />
-<meta name="identifier-url" content="www.campuscrew.com" />
+<meta name="identifier-url" content="www.planificateur-cyclable.com" />
 <meta http-equiv="content-language" content="<?php echo $arrOutput['meta']['lang']?>" />
 <meta name="title" content="<?php echo META_TITLE.' | '.$arrOutput['meta']['title'];?>" />
 <meta name="description" content="<?php echo $arrOutput['meta']['description'];?>" />

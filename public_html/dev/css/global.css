@@ -113,6 +113,27 @@ DIV.row-grille-recommandation{
     padding-top: 20px;
 	}
 */
+
+/* dots for recommandations colored */
+span.recom-dot{
+	border-radius: 8px;
+	background-color: #ccc;
+	height: 12px;
+	width: 12px;
+	line-height: 12px;
+	margin-top: 4px;
+}
+span.recom-dot.red{
+	background-color: #ccc;
+}
+span.recom-dot.yellow{
+	background-color: #F89406;
+}
+span.recom-dot.green{
+	background-color: #1CD61C;
+}
+
+
 .box-recommandation{
 	padding: 20px;
 	background-color: #eee;
@@ -191,20 +212,24 @@ INPUT[type="text"]:focus, INPUT[type="password"]:focus, SELECT:focus{
 .yellow{
 	color:#F89406;
 	font-size: 20px;
-	}	
-.conn{
-	color:#ccc;
-	/*margin-right:10px;*/
-	font-size: 16px;
-	}	
-.conn.on{
-	color:#F89406 !important;
 	}
-.conn.notsaved{
-	color:#f00 !important;
+span.conn{
+	border-radius: 8px;
+	background-color: #ccc;
+	height: 12px;
+	width: 12px;
+	line-height: 12px;
+	margin-top: 4px;
+	float:right;
+	}		
+span.conn.on{
+	background-color:#F89406 !important;
+	}
+span.conn.notsaved{
+	background-color:#f00 !important;
 	}	
-.conn.saved{
-	color:#1CD61C !important;
+span.conn.saved{
+	background-color:#1CD61C !important;
 	}
 A.connection-state{
 	padding:0;

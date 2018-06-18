@@ -41,6 +41,7 @@ function sqlSafe($str){
 	//$search = array("\\",  "\x00", "\n",  "\r",  "'",  '"', "\x1a");
     //$replace = array("\\\\","\\0","\\n", "\\r", "\'", '\"', "\\Z");
 	//$str = mysql_real_escape_string($str);
+	//return mysqli_real_escape_string($str);
     return str_replace('"', '\"', $str);
 	//return $str;
 	}	
@@ -85,7 +86,6 @@ function formatJavascriptContent($result){
 	}	
 	
 //---------------------------------------------------------------------------------------------------------------
-
 function _T($text, $display = false){
 	global $gArrText;
 		
@@ -113,7 +113,6 @@ function _T($text, $display = false){
 	}
 
 //------------------------------------------------------------------------------------------	
-
 function rteSafeReverse($strText) {
 	$tmpString = $strText; 
 	$tmpString = str_replace('&amp;','&', $tmpString); 
@@ -155,7 +154,6 @@ function isTrue($var){
 	}
 
 //---------------------------------------------------------------------------------------------------------------
-
 function safeInputString($str){
 	//les ecriture des retours de formulaire pour eviter les script attack
 	return  preg_replace('/[<>;:()"]+/i','', stripslashes($str));;
@@ -168,19 +166,16 @@ function safeInputInt($str){
 
 
 //---------------------------------------------------------------------------------------------------------------	
-
 function number_pad($number, $n){
 	return str_pad((int)$number, $n, "0", STR_PAD_LEFT);
 	}	
 
 //---------------------------------------------------------------------------------------------------------------	
-	
 function replaceNewLineByBR($str){
 	return str_replace("\n", '<br />', $str);
 	}
 	
 //---------------------------------------------------------------------------------------------------------------	
-	
 function trimNewLine($str){
 	$str = str_replace("\r\n", '', $str);
 	$str = str_replace("\r\f", '', $str);
@@ -188,14 +183,12 @@ function trimNewLine($str){
 	}
 	
 //---------------------------------------------------------------------------------------------------------------	
-	
 function replaceSpaceByNBSP($str){
 	return str_replace(" ", '&nbsp;', $str);
 	}	
 	
 
 //---------------------------------------------------------------------------------------------------------------	
-	
 function add_date($givendate, $day=0, $mth=0, $yr=0){
 	$cd = strtotime($givendate);
 	$newdate = date('d-m-Y', mktime(date('h', $cd), date('i',$cd), date('s',$cd), date('m',$cd)+$mth, date('d',$cd)+$day, date('Y',$cd)+$yr));
@@ -203,14 +196,12 @@ function add_date($givendate, $day=0, $mth=0, $yr=0){
 	}
 	
 //---------------------------------------------------------------------------------------------------------------
-	
 function addHoursToDate($date, $hours){
 		return date("Y-m-d H:i:s", strtotime($date) + ((60*60) * $hours));
 		}		
 
 
 //------------------------------------------------------------------------------------------------------------	
-	
 function format2dec($num){
 		$num = round($num,2);
 		return number_format($num, 2, '.', '');
@@ -249,9 +240,7 @@ function encodeArrowTag($str){
 	
 	
 //---------------------------------------------------------------------------------------------
-
 // THIS SERIALIZE AND UNSERIALIZE HTML CONTENT GENERALLY MADE WITH TINYMCE AND PASSED BY JSON
-
 
 function unserializeFromDbData($data){
 	return unserialize(str_replace('&quot;','"',$data)); 
@@ -286,11 +275,11 @@ function getCookies($key){
 	return false;	
 	}	
 	
+//---------------------------------------------------------------------------------------------	
+function getCacheBuster(){
+	return 'cb'.time();
+}	
 	
-	
-//END
 
 
-
-
-
+	//END

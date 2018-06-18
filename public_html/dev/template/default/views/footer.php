@@ -26,7 +26,7 @@
 			//copyright
 			echo '<ul class="nav pull-right">';
 			echo '<li><a href="http://www.dechod.com">'.$arrOutput['footer']['copyright'].'</a></li>';
-			echo '<li><a href="#" class="connection-state"><span id="connection" class="conn">&#x26AB;</span></a></li>';	
+			echo '<li><a href="#" class="connection-state" title=""><span id="connection" class="conn"></span></a></li>';	
 			echo '</ul>';	
 			?>
 		</div>

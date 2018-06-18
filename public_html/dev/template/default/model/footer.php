@@ -9,7 +9,7 @@
 //--------------------------------------------------------
 
 //copyright
-$arrOutput['footer']['copyright'] = 'Copyright @Dwizzel 2013';
+$arrOutput['footer']['copyright'] = 'Copyright @Dwizzel 2018';
 
 //--------------------------------------------------------
 
