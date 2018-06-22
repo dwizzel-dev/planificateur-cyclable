@@ -869,7 +869,7 @@ function JAppz(){
 		
 		//le input
 		str += '<p>' + jLang.t('nom de la grille: ') + '</p>';
-		str += '<p><input class="input-1" type="text" value="' + formatJavascript(this.arrCurrentGrilleInfos.name) + '" id="modal-input-1"></p>';
+		str += '<p><input class="input-1" type="text" value="' + formatJavascript(userInputDecoder(this.arrCurrentGrilleInfos.name)) + '" id="modal-input-1"></p>';
 		
 		var oButts = this.openAlert('save', jLang.t('modification'), str, false);
 		
@@ -895,7 +895,7 @@ function JAppz(){
 
 		$('#modal-input-1').removeClass('error');
 		
-		var strName = $('#modal-input-1').val();	
+		var strName = userInputEncoder($('#modal-input-1').val());	
 		//validation
 		var arrField = [];
 		if(strName == ''){
@@ -931,7 +931,7 @@ function JAppz(){
 		
 		//le input
 		str += '<p>' + jLang.t('description de la grille: ') + '</p>';
-		str += '<p><textarea class="input-1" id="modal-input-1" rows="6">' + formatJavascript(this.arrCurrentGrilleInfos.desc) + '</textarea></p>';
+		str += '<p><textarea class="input-1" id="modal-input-1" rows="6">' + formatJavascript(userInputDecoder(this.arrCurrentGrilleInfos.desc)) + '</textarea></p>';
 		
 		var oButts = this.openAlert('save', jLang.t('modification'), str, false);
 		
@@ -957,7 +957,7 @@ function JAppz(){
 
 		$('#modal-input-1').removeClass('error');
 		
-		var strDesc = $('#modal-input-1').val();	
+		var strDesc = userInputEncoder($('#modal-input-1').val());	
 		//validation
 		var arrField = [];
 		if(strDesc == ''){
@@ -1402,8 +1402,8 @@ function JAppz(){
 		
 		var strType = $('#field-grille-type').val();
 		var strMilieu = $('#field-grille-milieu').val();
-		var strName = $('#field-grille-name').val();
-		var strDesc = $('#field-grille-desc').val();
+		var strName = userInputEncoder($('#field-grille-name').val());
+		var strDesc = userInputEncoder( $('#field-grille-desc').val());
 				
 		//validation
 		var arrField = [];
@@ -1619,7 +1619,7 @@ function JAppz(){
 		
 		//le input
 		str += '<p>' + jLang.t('nom du parcours: ') + '</p>';
-		str += '<p><input class="input-1" type="text" value="' + formatJavascript(this.arrCurrentParcoursInfos.name) + '" id="modal-input-1"></p>';
+		str += '<p><input class="input-1" type="text" value="' + formatJavascript(userInputDecoder(this.arrCurrentParcoursInfos.name)) + '" id="modal-input-1"></p>';
 		
 		var oButts = this.openAlert('save', jLang.t('modification'), str, false);
 		
@@ -1645,7 +1645,7 @@ function JAppz(){
 
 		$('#modal-input-1').removeClass('error');
 		
-		var strName = $('#modal-input-1').val();	
+		var strName = userInputEncoder($('#modal-input-1').val());	
 		//validation
 		var arrField = [];
 		if(strName == ''){
@@ -1684,7 +1684,7 @@ function JAppz(){
 		
 		//le input
 		str += '<p>' + jLang.t('description du parcours: ') + '</p>';
-		str += '<p><textarea id="modal-input-1" class="input-1" rows="6">' + formatJavascript(this.arrCurrentParcoursInfos.desc) + '</textarea></p>';
+		str += '<p><textarea id="modal-input-1" class="input-1" rows="6">' + formatJavascript(userInputDecoder(this.arrCurrentParcoursInfos.desc)) + '</textarea></p>';
 		
 		var oButts = this.openAlert('save', jLang.t('modification'), str, false);
 		
@@ -1710,7 +1710,7 @@ function JAppz(){
 
 		$('#modal-input-1').removeClass('error');
 		
-		var strDesc = $('#modal-input-1').val();	
+		var strDesc = userInputEncoder($('#modal-input-1').val());	
 			
 		//on chnage le nom dans la classe parcours
 		this.arrCurrentParcoursInfos.desc = strDesc;
@@ -1741,8 +1741,8 @@ function JAppz(){
 		$('#field-parcours-name').removeClass('error');
 		//$('#field-parcours-desc').removeClass('error');
 		
-		var strName = $('#field-parcours-name').val();
-		var strDesc = $('#field-parcours-desc').val();
+		var strName = userInputEncoder($('#field-parcours-name').val());
+		var strDesc = userInputEncoder($('#field-parcours-desc').val());
 		
 		//validation
 		var arrField = [];

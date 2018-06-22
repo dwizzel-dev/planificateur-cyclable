@@ -7,7 +7,6 @@
 
 */
 ?>
-
 <div class="navbar fixed-top shadow" id="header">
 	<div class="navbar-inner">
 		<div class="container">

@@ -46,4 +46,28 @@ function eraseCookie(name) {
     createCookie(name, "", -1);
 }	
 	
-	
+//----------------------------------------------------------------------------------------------	
+function safeString(str) {
+    return str;
+}	
+
+//----------------------------------------------------------------------------------------------	
+function userInputEncoder(str) {
+    //console.log('userInputEncoder.before:' + str);
+    str = $('<span>').text(str).html();
+    str = String(str).replace(/'/g, '&#39;'); 
+    str = String(str).replace(/"/g, '&#34;'); 
+    str = String(str).replace(/\\/g, '&#92;'); 
+    //console.log('userInputEncoder.after:' + str);
+    return str;
+}
+
+//----------------------------------------------------------------------------------------------	
+function userInputDecoder(str) {
+    //console.log('userInputDecoder.before:' + str);
+    str = String(str).replace(/&#39;/g, '\''); 
+    str = String(str).replace(/&#34;/g, '"'); 
+    str = String(str).replace(/&#92;/g, '\\'); 
+    //console.log('userInputDecoder.after:' + str);
+    return str;
+}
