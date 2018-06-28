@@ -79,15 +79,14 @@ $oReg->get('log')->log(
 
 //OUTPUT FOR AJAX
 $oReg->get('resp')->addHeader('Content-Type: text/plain; charset=utf-8');
+
+//set headers to NOT cache a page
+$oReg->get('resp')->addHeader('Cache-Control: no-cache, must-revalidate'); //HTTP 1.1
+$oReg->get('resp')->addHeader('Pragma: no-cache'); //HTTP 1.0
+$oReg->get('resp')->addHeader('Expires: Sat, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+
 $oReg->get('resp')->output();	
 
 //usleep(60000000); // 1000000 = 1S
-
-
-
-
-
-
-
 
 //END

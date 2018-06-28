@@ -506,22 +506,11 @@ function createZipFile($basepath, $files = array(), $destination = '', $overwrit
 	return false;
 	}	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+//---------------------------------------------------------------------------------------------	
+function getCacheBuster(){
+	return 'cb'.time();
+}		
 	
 	
 	
 //END
-
-
-
-
-

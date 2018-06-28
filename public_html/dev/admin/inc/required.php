@@ -102,15 +102,15 @@ if($oReg->get('req')->get('path')){
 //-----------------------------------------------------------------------------------------------	
 // ****NOTES: ORDER IS VERY IMPORTANT, EX: function.php use lang.php 
 
+// GLOBAL HELPERS
+require_once(DIR_INC.'helpers.php');
+
 // LINKS, ROUTES
 require_once(DIR_INC.'links.php');
 require_once(DIR_INC.'router.php');
 
 // GLOBAL LANG
 require_once(DIR_INC.'lang.php');
-
-// GLOBAL HELPERS
-require_once(DIR_INC.'helpers.php');
 
 //GLOBAL HASH ARRAY
 require_once(DIR_INC.'hash.php');

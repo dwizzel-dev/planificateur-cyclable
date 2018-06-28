@@ -59,7 +59,7 @@ function JLang(){
 			tx['creer la grille'] = 'Créer le nouvel aménagement';
 			tx['nom du parcours: '] = 'Nom du parcours: ';
 			tx['description du parcours: '] = 'Description du parcours: ';
-			tx['mes grilles'] = 'retour aux grilles';
+			tx['mes grilles'] = 'retour à l\'aménagement';
 			tx['les questions'] = 'les questions';
 			tx['repondre aux questions du formulaire, remplir dans l\'ordre'] = 'Répondre à toutes les questions du formulaire. Cliquer sur la question pour afficher la bulle d\'aide';
 			tx['parcours'] = 'parcours';

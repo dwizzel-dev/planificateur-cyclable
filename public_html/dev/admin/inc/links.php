@@ -6,6 +6,8 @@
 
 */
 
+$cacheBuster = getCacheBuster();
+
 $arrTmpLinks = array( 
 	
 	//single
@@ -46,14 +48,14 @@ $arrTmpLinks = array(
 	);
 	
 foreach($arrTmpLinks as $k=>$v){
-	$arrTmpLinks[$k] = PATH_WEB.'index.php?&lang='.$oGlob->get('lang').'&path='.$v.'/';	
-	}	
-		
+	$arrTmpLinks[$k] = PATH_WEB.'index.php?&cb='.$cacheBuster.'&lang='.$oGlob->get('lang').'&path='.$v.'/';
+	}
+	
 //set it to global
 $oGlob->set('links', $arrTmpLinks);
 
 //clean
-unset($arrTmpLinks);
+unset($arrTmpLinks, $cacheBuster);
 
 
 //END
